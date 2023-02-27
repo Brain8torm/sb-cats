@@ -8,10 +8,6 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-/*body {
-  font-family: 'Rubik Regular', sans-serif;
-}*/
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -23,8 +19,6 @@ html {
 
 .header {
     background-color: #fff;
-    /*padding-top: 20px;
-  padding-bottom: 20px;*/
     box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.15);
 }
 
@@ -72,23 +66,19 @@ html {
 }
 
 .card:nth-child(5n-2) {
-    background-color: rgba(235, 149, 50, 0.4); // orange
+    background-color: rgba(235, 149, 50, 0.4);
 }
 .card:nth-child(5n-3) {
-    background-color: rgba(131, 214, 222, 0.4); // blue
+    background-color: rgba(131, 214, 222, 0.4);
 }
 .card:nth-child(5n-4) {
-    background-color: rgba(151, 206, 104, 0.4); // green
+    background-color: rgba(151, 206, 104, 0.4);
 }
 .card:nth-child(5n-1) {
-    background-color: rgba(255, 103, 102, 0.4); // red
+    background-color: rgba(255, 103, 102, 0.4);
 }
 .card:nth-child(5n) {
-    background-color: rgba(254, 198, 6, 0.4); // yellow
-}
-
-.card:first-child {
-    /*grid-column: 2 / 4;*/
+    background-color: rgba(254, 198, 6, 0.4);
 }
 
 .card {
@@ -157,13 +147,6 @@ html {
     transition: all 0.5s linear;
     padding: 1rem;
 }
-
-/*.card:hover .card__content {
-  opacity: 1;
-  height: 100px;
-  z-index: 1;
-  background: rgba( 0, 0, 0, .35);
-}*/
 
 .card__content {
     display: flex;
@@ -255,14 +238,6 @@ html {
     right: 20px;
 }
 
-.popup__close_external {
-    background-color: transparent;
-    color: var(--bg-main-color);
-    top: -40px;
-    right: -40px;
-    font-size: 30px;
-}
-
 .popup__image {
     max-width: 100%;
     max-height: 100%;
@@ -277,17 +252,10 @@ html {
     padding: 15px 0;
 }
 
-.popup-card .popup__container {
-    //max-width:
-}
 .popup-card .popup__content {
     display: flex;
     flex-direction: column;
 }
-
-/*.popup-card .popup-card_image {
-  max-width: 400px;
-}*/
 
 .popup-card_title {
     font-size: 26px;
@@ -512,12 +480,6 @@ button.icon:not(:disabled) {
 .form .button {
     grid-column: 2 / 3;
 }
-
-/*@media (max-width: 1024px) {
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}*/
 
 @media (max-width: 425px) {
     .form {

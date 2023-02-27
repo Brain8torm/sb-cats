@@ -5,13 +5,10 @@ let popupAdd = null;
 let popupCard = null;
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.footer__copytights_year').textContent = new Date().getFullYear();
+    document.querySelector('.footer__copyrights_year').textContent = new Date().getFullYear();
 });
 
 function handleCardClick(data) {
-    console.log('card clicked');
-    console.log('data', data);
-
     popupCard = new PopupCard('#popup-card-template', 'popup-card');
 
     if (!document.body.contains(document.querySelector('.popup-card'))) {
@@ -42,11 +39,9 @@ cats.forEach((catData) => {
 
 cards.forEach((card) => {
     card.addEventListener('mouseenter', (e) => {
-        //e.stopPropagation();
         e.target.querySelector('.card__hover').style.opacity = 1;
     });
     card.addEventListener('mouseleave', (e) => {
-        //e.stopPropagation();
         e.target.querySelector('.card__hover').style.opacity = '';
     });
 });
@@ -60,8 +55,6 @@ btnOpenPopup.addEventListener('click', (e) => {
         popupAdd.setEventListener();
         popupAdd.open();
     }
-
-  // TODO: Сделать более удобное расположение полей в мобильной версии
   
     const formCatsAdd = document.querySelector('#popup-form-add');
     formCatsAdd.addEventListener('submit', (e) => {
@@ -69,11 +62,7 @@ btnOpenPopup.addEventListener('click', (e) => {
 
         const elementsFormCat = [...formCatsAdd.elements];
         const formData = serializeForm(elementsFormCat);
-
-      console.log('formData', formData);
-      
-
-
+  
         const newElement = new Card(
             formData,
             '#card-template',
@@ -82,11 +71,11 @@ btnOpenPopup.addEventListener('click', (e) => {
             handleCardClick
         );
 
-      cardsContainer.append(newElement.getElement());
-      
-      setTimeout(() => {
-        popupAdd.close();
-      }, 1000)
+        cardsContainer.append(newElement.getElement());
+        
+        setTimeout(() => {
+            popupAdd.close();
+        }, 1000)
     });
 });
 
@@ -105,6 +94,3 @@ function serializeForm(elements) {
 
     return formData;
 }
-
-
-// TODO: Добавить обработчик на .card__favorite

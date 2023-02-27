@@ -28,13 +28,15 @@ class Popup {
 
     open() {
         this._popupElement.classList.add('popup-active');
-        this._popupElement.querySelector('[name="id"]').value =
-            Math.floor(Math.random() * 1000) + 1;
-        this._popupElement.querySelector('[name="age"]').value = new Date().getFullYear();
-        this._popupElement.querySelector('[name="rate"]').value =
-            Math.floor(Math.random() * 10) + 1;
-        document.addEventListener('keyup', this.#handleEscUp);
-        this._popupElement.querySelector('#popup-form-add input:first-child').focus();
+        if (this._popupElement.classList.contains('popup-add')) {
+            this._popupElement.querySelector('[name="id"]').value =
+                Math.floor(Math.random() * 1000) + 1;
+            this._popupElement.querySelector('[name="age"]').value = new Date().getFullYear();
+            this._popupElement.querySelector('[name="rate"]').value =
+                Math.floor(Math.random() * 10) + 1;
+            document.addEventListener('keyup', this.#handleEscUp);
+            this._popupElement.querySelector('#popup-form-add input:first-child').focus();
+        }
     }
 
     close() {

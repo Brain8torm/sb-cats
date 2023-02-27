@@ -31,23 +31,17 @@ class Card {
         this.#element = this.#getTemplate().cloneNode(true);
 
         const cardClass = [`card-${this.#data.id}`];
+
         if (this.#data.favorite) cardClass.push('card-favorite');
         this.#element.classList.add(...cardClass);
 
-        //console.log(this.#element);
         const cardTitleElement = this.#element.querySelector('.card__title');
         const cardImageElement = this.#element.querySelector('.card__image');
-        const cardFavoriteElement = this.#element.querySelector('.card__favorite');
         const cardHoverElement = this.#element.querySelector('.card__hover');
 
         cardTitleElement.textContent = this.#data.name;
         cardImageElement.src = this.#data.image;
 
-        if (!this.#data.favourite) {
-            // cardFavoriteElement.remove();
-        }
-
-        // cardTitleElement.addEventListener('click', () => {
         cardHoverElement.addEventListener('click', () => {
             this.#handleCardClick(this.#data);
         });
